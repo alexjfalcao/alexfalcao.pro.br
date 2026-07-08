@@ -982,62 +982,6 @@
         }
       }
 
-      .cellar {
-        display: flex;
-        flex-direction: column;
-        gap: 11px;
-      }
-      .cellar .row {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .cellar .lbl {
-        font-family: "Spline Sans Mono", monospace;
-        font-size: 0.66rem;
-        letter-spacing: 0.06em;
-        color: var(--haze);
-        width: 78px;
-      }
-      .cellar .track {
-        flex: 1;
-        height: 7px;
-        background: rgba(255, 255, 255, 0.06);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-      .cellar .fill {
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          var(--accent-deep),
-          var(--accent-soft)
-        );
-        border-radius: 4px;
-        transform-origin: left;
-        animation: grow-x 1.1s var(--ease) both;
-      }
-      @keyframes grow-x {
-        from {
-          transform: scaleX(0);
-        }
-        to {
-          transform: scaleX(1);
-        }
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .cellar .fill {
-          animation: none;
-        }
-      }
-      .cellar .cnt {
-        font-family: "Marcellus", serif;
-        font-size: 0.92rem;
-        color: var(--mist);
-        width: 26px;
-        text-align: right;
-      }
-
       /* ============ Research ============ */
       .research {
         display: grid;
@@ -2116,51 +2060,84 @@
                   ><svg><use href="#strophalos" /></svg
                 ></span>
                 <div class="inner">
-                  <div class="wname">Garrafa <b>Certa</b></div>
+                  <div class="wname" style="margin-bottom: 4px">
+                    Garrafa <b>Certa</b>
+                  </div>
                   <div class="wtag">Controle de adega</div>
-                  <div class="cellar">
-                    <div class="row">
-                      <span class="lbl">TINTOS</span
-                      ><span class="track"
-                        ><span class="fill" style="width: 82%"></span></span
-                      ><span class="cnt">41</span>
-                    </div>
-                    <div class="row">
-                      <span class="lbl">BRANCOS</span
-                      ><span class="track"
-                        ><span class="fill" style="width: 46%"></span></span
-                      ><span class="cnt">18</span>
-                    </div>
-                    <div class="row">
-                      <span class="lbl">ROSÉS</span
-                      ><span class="track"
-                        ><span class="fill" style="width: 22%"></span></span
-                      ><span class="cnt">9</span>
-                    </div>
-                    <div class="row">
-                      <span class="lbl">ESPUMANTES</span
-                      ><span class="track"
-                        ><span class="fill" style="width: 34%"></span></span
-                      ><span class="cnt">12</span>
-                    </div>
+                  <div
+                    class="appshots"
+                    data-lb-group
+                    aria-label="Telas reais do app Garrafa Certa"
+                  >
+                    <figure
+                      class="appshot"
+                      data-lb-item
+                      data-lb-src="images/garrafacerta/01_home.jpg"
+                      data-lb-cap="Garrafa Certa · sua adega"
+                    >
+                      <img
+                        src="images/garrafacerta/01_home.jpg"
+                        alt="Tela inicial do Garrafa Certa — Sua Adega, Organizada"
+                        loading="lazy"
+                      />
+                    </figure>
+                    <figure
+                      class="appshot"
+                      data-lb-item
+                      data-lb-src="images/garrafacerta/02_destaque.jpg"
+                      data-lb-cap="Garrafa Certa · vinhos em destaque"
+                    >
+                      <img
+                        src="images/garrafacerta/02_destaque.jpg"
+                        alt="Tela de vinhos em destaque do Garrafa Certa com rótulos catalogados"
+                        loading="lazy"
+                      />
+                    </figure>
+                    <figure
+                      class="appshot"
+                      data-lb-item
+                      data-lb-src="images/garrafacerta/03_prateleira.jpg"
+                      data-lb-cap="Garrafa Certa · prateleira"
+                    >
+                      <img
+                        src="images/garrafacerta/03_prateleira.jpg"
+                        alt="Prateleira do Garrafa Certa com vinhos organizados por país, safra e avaliação"
+                        loading="lazy"
+                      />
+                    </figure>
+                    <figure
+                      class="appshot"
+                      data-lb-item
+                      data-lb-src="images/garrafacerta/04_vinho.jpg"
+                      data-lb-cap="Garrafa Certa · ficha do vinho"
+                    >
+                      <img
+                        src="images/garrafacerta/04_vinho.jpg"
+                        alt="Ficha detalhada de um vinho no Garrafa Certa com foto, país, região e avaliação"
+                        loading="lazy"
+                      />
+                    </figure>
+                  </div>
+                  <div class="appshots-hint mono">
+                    Telas reais · toque para ampliar
                   </div>
                 </div>
               </div>
               <div class="body">
                 <div class="meta">
-                  <span class="status soon">◷ Em breve</span>
-                  <span class="status tech">App · Impressão 3D</span>
+                  <span class="status live">● No ar</span>
+                  <span class="status tech">React · Supabase</span>
                 </div>
                 <h3>Garrafa Certa</h3>
                 <p>
-                  Controle de adega de vinhos: catalogar rótulos, safras e
-                  posições, saber o que abrir e quando. Une o app a um suporte
-                  de garrafas impresso em 3D — a parte física e a digital
-                  pensadas juntas.
+                  Adega pessoal na web: catalogue rótulos com busca no catálogo,
+                  organize as garrafas em prateleiras, avalie suas degustações e
+                  compartilhe a coleção com a família controlando o acesso —
+                  tudo de forma simples e intuitiva.
                 </p>
                 <div class="plinks">
-                  <a href="#bancada"
-                    >Ver peças impressas <span aria-hidden="true">→</span></a
+                  <a href="https://garrafa-certa.onrender.com" target="_blank"
+                    >Acessar o app <span aria-hidden="true">→</span></a
                   >
                 </div>
               </div>
@@ -2245,8 +2222,7 @@
             <h2>Dez anos de bancada.</h2>
             <p>
               Modelar, calibrar, imprimir, refazer. Peças funcionais, protótipos
-              e suportes que resolvem algo em casa — inclusive o organizador de
-              garrafas do Garrafa Certa.
+              e suportes que resolvem algo em casa.
             </p>
           </div>
 
