@@ -20,8 +20,37 @@ Personal/professional landing page for **Alex Falcão** (alexfalcao.pro.br). Sta
 - Motion must keep `prefers-reduced-motion` fallbacks; content must remain visible without JS (reveals only enhance).
 - **Images:** optimize new raster assets for web; keep a copy of any source/original outside the repo before overwriting. 3D photos → `images/3d/`; app screenshots → `images/ativosmart/`.
 - **Lightbox is generic:** to make any gallery zoomable, wrap it with `data-lb-group` and mark each item `data-lb-item` (optionally `data-lb-src` / `data-lb-cap`).
-- **`mandala/` is not authored here.** It is a copy of the Mandala Forge project (`~/Documents/Projetos/Mandala`): its `index.html`, `mandala-cloisonne.html` and `img/`. That repo is the source of truth — edit there and re-copy the three, never patch `mandala/` in place, or the next copy silently reverts it. **Do the copy with `./publicar.sh` here**, never by hand: `./publicar.sh --verificar` says whether `mandala/` matches its source, and the plain form pulls the files over (refusing while the source repo has uncommitted changes). It reads the source from `$MANDALA`, defaulting to `~/Documents/Projetos/Mandala`, and also brings that project's `LICENSE` in as `LICENSE.txt` — the app is AGPL-3.0 and the licence has to travel with it. Two past commits here — `e767a33` (Open Graph card) and `6e422b0` (footer) — broke this rule by editing `mandala/index.html` in place and only converged because they were back-ported by hand. It has its own design system (champagne accent on cold near-black) and does not follow this site's palette.
+- **`mandala/` is not authored here.** It is a published copy of the Mandala Forge project, which has its own design system (champagne accent on cold near-black) and does not follow this site's palette. Never edit it in place — see [Publishing `mandala/`](#publishing-mandala) below.
 - **New page, three chores:** add it to `sitemap.xml`, link it from the relevant section of `index.html`, and give it Open Graph tags with a 1200×630 image of its own (`mandala/img/og.png` is the pattern — the page's own hero art on the page's own background, so the card matches what the click leads to).
+
+## Publishing `mandala/`
+
+`mandala/` is a copy. **Mandala Forge is authored in its own repository**
+(`~/Documents/Projetos/Mandala`, GitHub: `alexjfalcao/mandala-forge`) and that repo is the
+source of truth. Editing the copy in place does not survive: the next publish silently
+reverts it. Two commits here already made that mistake — `e767a33` (Open Graph card) and
+`6e422b0` (footer) were written in `mandala/` and only converged because someone back-ported
+them by hand.
+
+**Publishing is `./publicar.sh`, run from this repo**, never a manual `cp`:
+
+```bash
+./publicar.sh --verificar   # does mandala/ match its source? writes nothing
+./publicar.sh               # pull the current version over
+```
+
+- It reads the source from `$MANDALA`, defaulting to `~/Documents/Projetos/Mandala`.
+- It refuses to copy while the **source** repo has uncommitted changes, so the commit made
+  here can never point at a version that exists in no history.
+- It copies four things: `index.html`, `mandala-cloisonne.html`, `img/`, and that project's
+  `LICENSE` as **`LICENSE.txt`**. The licence travels because the app is AGPL-3.0 and is
+  served from here; the extension is added because Pages serves an extensionless file as
+  `octet-stream`, which makes the browser download it instead of showing it.
+- `img/` is deleted before being recopied, so a file removed upstream disappears here too.
+
+⚠️ Both published HTML files carry an AGPL notice whose `Source:` line points at
+`github.com/alexjfalcao/mandala-forge`. **That repository has to be public** by the time a
+version carrying it is live, or the link 404s for everyone reading the page source.
 
 ## Verifying changes
 
