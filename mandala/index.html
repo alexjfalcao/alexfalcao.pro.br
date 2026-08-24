@@ -2,6 +2,25 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<!--
+  Mandala Forge — cloisonné mandala generator for 3D printing
+  Copyright (C) 2026  Alex Esteves Jaccoud Falcão
+
+  This program is free software: you can redistribute it and/or modify it
+  under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or (at
+  your option) any later version.
+
+  This program is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero
+  General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+  Source: https://github.com/alexjfalcao/mandala-forge
+-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mandala Forge — mandala em relevo que imprime colorida</title>
 <meta name="description" content="Desenhe uma mandala cloisonné no navegador e baixe um 3MF que o Bambu Studio abre com as cores já nos extrusores certos. Sem instalar, sem baixar nada.">
@@ -244,9 +263,22 @@
   .rodape a b{font-weight:400;color:var(--dim)}
   .rodape a:hover b{color:var(--txt)}
   .refs{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:flex-end}
+  /* Apoio é a exceção ao parágrafo acima: é chamada, não navegação. Ganha o
+     acento — mas só no CONTORNO. Champanhe preenchido é do CTA que abre o
+     gerador, e mais nada: um segundo botão cheio criaria empate e quem perderia
+     seria a ação que a página existe para oferecer. Mesmo tratamento do
+     fieldset `Apoie o projeto` dentro do app, de propósito. */
+  .doacoes{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+  .rodape .doacoes a{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:6px 12px;border:1px solid var(--acc);border-radius:99px;
+  }
+  .rodape .doacoes a:hover{border-color:var(--acc2);background:var(--sup)}
+  .doacoes svg{width:13px;height:13px;flex:0 0 auto}
   @media (max-width:640px){
     .rodape .linha{flex-direction:column;gap:10px}
     .refs{justify-content:flex-start}
+    .doacoes{justify-content:flex-start}
   }
 
   @media (max-width:860px){
@@ -460,6 +492,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="env">
     <div class="linha">
       <span data-i18n="rod.a">Mandala Forge · gerador de mandala em filete e cores</span>
+      <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer" data-i18n-title="rod.lic">AGPL-3.0</a>
     </div>
     <div class="linha autor">
       <span class="feito">
@@ -472,6 +505,15 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <a href="https://github.com/alexjfalcao" target="_blank" rel="noopener noreferrer">GitHub <b>/alexjfalcao</b></a>
         <a href="https://www.linkedin.com/in/alexjfalcao/" target="_blank" rel="noopener noreferrer">LinkedIn <b>/alexjfalcao</b></a>
         <a href="https://instagram.com/alexjfalcao" target="_blank" rel="noopener noreferrer">Instagram <b>@alexjfalcao</b></a>
+      </nav>
+    </div>
+    <div class="linha apoio">
+      <span data-i18n="rod.apoio">Grátis, sem anúncio e sem rastreamento. Se ele te poupou trabalho:</span>
+      <nav class="doacoes" data-i18n-aria="rod.doar">
+        <a href="https://buymeacoffee.com/alexjfalcao" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M3 5.8h6.6v3.9a3.3 3.3 0 0 1-6.6 0z"/><path d="M9.6 6.9h1.2a1.8 1.8 0 0 1 0 3.6H9.6"/><path d="M5.2 4V2.1M7.5 4V2.1"/></svg>Buy Me a Coffee</a>
+        <a href="https://github.com/sponsors/alexjfalcao" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 13.9C7.7 13.9 1.9 10.3 1.9 6.2A3.2 3.2 0 0 1 8 4.6a3.2 3.2 0 0 1 6.1 1.6c0 4.1-5.8 7.7-6.1 7.7z"/></svg>GitHub Sponsors</a>
       </nav>
     </div>
   </div>
@@ -542,7 +584,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       'fec.h': 'Sua primeira mandala está a um clique',
       'fec.p': 'Abre no navegador, já com um desenho pronto para você mexer. Nada para instalar, nada para cadastrar.',
       'rod.a': 'Mandala Forge · gerador de mandala em filete e cores',
-      'rod.feito': 'Feito por', 'rod.refs': 'perfis do autor'
+      'rod.feito': 'Feito por', 'rod.refs': 'perfis do autor',
+      'rod.lic': 'termos da licença deste programa',
+      'rod.apoio': 'Grátis, sem anúncio e sem rastreamento. Se ele te poupou trabalho:',
+      'rod.doar': 'formas de apoiar o projeto'
     },
     en: {
       'doc.titulo': 'Mandala Forge — relief mandalas that print in colour',
@@ -587,7 +632,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       'fec.h': 'Your first mandala is one click away',
       'fec.p': 'It opens in the browser with a drawing already on screen for you to push around. Nothing to install, no sign-up.',
       'rod.a': 'Mandala Forge · cloisonné mandala generator',
-      'rod.feito': 'Built by', 'rod.refs': "the author's profiles"
+      'rod.feito': 'Built by', 'rod.refs': "the author's profiles",
+      'rod.lic': "this program's licence terms",
+      'rod.apoio': 'Free, no ads, no tracking. If it saved you some work:',
+      'rod.doar': 'ways to support the project'
     }
   };
 
