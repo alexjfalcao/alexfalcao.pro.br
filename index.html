@@ -923,6 +923,31 @@
           transition: none;
         }
       }
+      /* single wide piece of art, where a strip of 124px thumbs makes no sense */
+      .projshot {
+        margin: 0;
+        cursor: zoom-in;
+        border-radius: 12px;
+        transition: transform 0.35s var(--ease);
+      }
+      .projshot img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .projshot:hover,
+      .projshot:focus-visible {
+        transform: translateY(-3px);
+      }
+      .projshot:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .projshot {
+          transition: none;
+        }
+      }
       .mini {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2269,6 +2294,63 @@
                 </div>
               </div>
             </article>
+
+            <!-- bambu-3mf -->
+            <article class="proj reveal">
+              <div class="art">
+                <span class="stroph spin" aria-hidden="true"
+                  ><svg><use href="#strophalos" /></svg
+                ></span>
+                <div class="inner">
+                  <div class="wname" style="margin-bottom: 4px">
+                    bambu<b>-3mf</b>
+                  </div>
+                  <div class="wtag">Skill · uma cor por extrusor</div>
+                  <div data-lb-group aria-label="Peça de exemplo do bambu-3mf">
+                    <figure
+                      class="projshot"
+                      data-lb-item
+                      data-lb-src="images/bambu3mf/coaster.webp"
+                      data-lb-cap="bambu-3mf · três cores, três sólidos fechados"
+                    >
+                      <img
+                        src="images/bambu3mf/coaster.webp"
+                        alt="Porta-copos de três cores gerado pelo bambu-3mf: base roxa, aro e anel dourados, doze pétalas vermelhas"
+                        width="1200"
+                        height="700"
+                        loading="lazy"
+                      />
+                    </figure>
+                  </div>
+                  <div class="appshots-hint mono">
+                    Geometria da própria skill · toque para ampliar
+                  </div>
+                </div>
+              </div>
+              <div class="body">
+                <div class="meta">
+                  <span class="status live">● Publicado</span>
+                  <span class="status tech">Python · Claude Code</span>
+                </div>
+                <h3>bambu-3mf</h3>
+                <p>
+                  A técnica que saiu do Mandala Forge, empacotada como skill do
+                  Claude Code: peça um objeto e ele volta como 3MF que o Bambu
+                  Studio abre com cada cor já no extrusor certo — um sólido
+                  fechado por cor, perfil de projeto completo e validação antes
+                  de entregar o arquivo. Só biblioteca padrão do Python, sem
+                  dependências.
+                </p>
+                <div class="plinks">
+                  <a
+                    href="https://github.com/alexjfalcao/bambu-3mf-skill"
+                    target="_blank"
+                    rel="noopener"
+                    >Ver no GitHub <span aria-hidden="true">→</span></a
+                  >
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -2736,8 +2818,13 @@
             lbImg.setAttribute("alt", it.alt);
             lbCap.textContent = it.cap;
           };
+          var navs = [].slice.call(dlg.querySelectorAll(".lb-nav"));
           var openGroup = function (items, i) {
             current = items;
+            // a group of one has nowhere to go: hide the arrows
+            navs.forEach(function (n) {
+              n.style.display = items.length < 2 ? "none" : "";
+            });
             show(i);
             dlg.showModal();
           };
