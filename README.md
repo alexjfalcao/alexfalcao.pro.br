@@ -25,12 +25,12 @@ A identidade visual completa (paleta, tipografia, tokens, componentes, motion) e
 Ordem das seções (âncoras entre parênteses):
 
 1. **Hero** — nome, "Construo caminhos.", foto, CTAs; strophalos + malha de rede ao fundo.
-2. **Indicadores** — 30+ anos em TI · 15+ anos em redes/liderança · 10+ anos de 3D · 1 app no ar (contadores animados).
+2. **Indicadores** — 30+ anos em TI · 15+ anos em redes/liderança · 10+ anos de 3D · 4 projetos (contadores animados).
 3. **Atuação** (`#atuacao`) — 4 áreas + chips das tecnologias usadas.
 4. **Trajetória** (`#trajetoria`) — timeline: telecom → provedores/operadoras → bancos globais → Santander → hoje.
-5. **Projetos** (`#projetos`) — **AtivoSmart** (no ar, com telas reais do app) e **Garrafa Certa** (em breve).
+5. **Projetos** (`#projetos`) — **AtivoSmart**, **Garrafa Certa** (ambos no ar, com telas reais), **Mandala Forge** e a skill **bambu-3mf**.
 6. **Pesquisa** (`#pesquisa`) — mestrado **HealthRank** (UNIFESP) + MBA (FGV) + graduação.
-7. **Impressão 3D** (`#bancada`) — galeria de peças + links para MakerWorld e Cults3D.
+7. **Impressão 3D** (`#3D`) — galeria de peças + links para MakerWorld e Cults3D.
 8. **Frase** — strophalos + "Abrir caminhos é remover obstáculos."
 9. **Contato** (`#contato`) — chamada + hub de links (LinkedIn, GitHub, Instagram, MakerWorld, Cults3D, e-mail).
 10. **Rodapé**.
