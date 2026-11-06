@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Garrafa Certa — sua adega no celular</title>
+    <meta
+      name="description"
+      content="Para quem tem mais vinho em casa do que consegue lembrar. Adega no celular, sem cadastro e sem login. Grátis no iPhone e no Android."
+    />
+    <link rel="canonical" href="https://www.alexfalcao.pro.br/garrafacerta/" />
+    <meta name="theme-color" content="#FAF5EF" />
+    <link rel="icon" type="image/webp" href="img/icone-256.webp" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Garrafa Certa — sua adega no celular" />
+    <meta
+      property="og:description"
+      content="Para quem tem mais vinho em casa do que consegue lembrar. Grátis no iPhone e no Android."
+    />
+    <meta property="og:url" content="https://www.alexfalcao.pro.br/garrafacerta/" />
+    <meta property="og:image" content="https://www.alexfalcao.pro.br/garrafacerta/img/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      Página de links do Garrafa Certa (link da bio do @garrafacerta e site da
+      Página do Facebook). Sistema visual do app, não o do site: creme #FAF5EF,
+      vermelho #BF1826, Playfair Display + Inter.
+    -->
+    <style>
+      :root {
+        --cream: #faf5ef;
+        --cream-border: #ebdfd2;
+        --red: #bf1826;
+        --red-dark: #9a1320;
+        --ink: #241512;
+        --muted: #8a7a6e;
+        --card: #fffdfa;
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background: var(--cream);
+        color: var(--ink);
+        font: 400 16px/1.5 Inter, system-ui, -apple-system, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      main {
+        width: 100%;
+        max-width: 440px;
+        padding: 56px 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+      }
+      .icone {
+        width: 96px;
+        height: 96px;
+        border-radius: 22px;
+        box-shadow: 0 10px 28px rgba(36, 21, 18, 0.18);
+      }
+      h1 {
+        font: 600 2rem/1.15 "Playfair Display", Georgia, serif;
+        margin: 22px 0 10px;
+        letter-spacing: -0.01em;
+      }
+      .tagline {
+        font: italic 500 1.15rem/1.4 "Playfair Display", Georgia, serif;
+        color: var(--red);
+        margin: 0 0 10px;
+      }
+      .sub {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin: 0 0 32px;
+      }
+      .links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .links a {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        padding: 15px 18px;
+        border-radius: 14px;
+        border: 1px solid var(--cream-border);
+        background: var(--card);
+        color: var(--ink);
+        text-decoration: none;
+        text-align: left;
+        transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      }
+      .links a:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(36, 21, 18, 0.08); }
+      .links a:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+      .links svg { width: 26px; height: 26px; flex: none; }
+      .links .txt { display: flex; flex-direction: column; line-height: 1.25; }
+      .links .t { font-weight: 600; font-size: 1rem; }
+      .links .d { font-size: 0.82rem; color: var(--muted); }
+      .links a.primario {
+        background: var(--red);
+        border-color: var(--red);
+        color: #fff;
+      }
+      .links a.primario .d { color: rgba(255, 255, 255, 0.82); }
+      .links a.primario:hover { background: var(--red-dark); }
+      .notas {
+        margin: 28px 0 0;
+        font-size: 0.85rem;
+        color: var(--muted);
+        text-wrap: balance;
+      }
+      footer {
+        padding: 24px 20px 32px;
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-align: center;
+      }
+      footer a { color: var(--muted); }
+      @media (prefers-reduced-motion: reduce) {
+        .links a { transition: none; }
+        .links a:hover { transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img class="icone" src="img/icone-256.webp" width="96" height="96" alt="Ícone do app Garrafa Certa" />
+      <h1>Garrafa Certa</h1>
+      <p class="tagline">Para quem tem mais vinho em casa do que consegue lembrar.</p>
+      <p class="sub">Sua adega no celular. Sem cadastro, sem login.</p>
+
+      <ul class="links" id="links">
+        <li id="ios">
+          <a class="primario" href="https://apps.apple.com/app/id6792910747" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.19-1.72-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.21 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.67-2.15.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.31-.89-2.33-3.55zM14.18 6.13c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z" />
+            </svg>
+            <span class="txt"><span class="t">Baixar na App Store</span><span class="d">iPhone e iPad</span></span>
+          </a>
+        </li>
+        <li id="android">
+          <a href="https://play.google.com/store/apps/details?id=br.pro.alexfalcao.garrafa_certa_app" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#34A853" d="M3.6 2.3c-.2.2-.3.6-.3 1v17.4c0 .4.1.8.3 1l9.7-9.7z" />
+              <path fill="#FBBC04" d="m16.6 15.3-3.3-3.3 3.3-3.3 3.7 2.1c1.1.6 1.1 1.6 0 2.2z" />
+              <path fill="#EA4335" d="M16.6 15.3 13.3 12l-9.7 9.7c.4.4 1 .4 1.7 0z" />
+              <path fill="#4285F4" d="M16.6 8.7 5.3 2.3c-.7-.4-1.3-.4-1.7 0l9.7 9.7z" />
+            </svg>
+            <span class="txt"><span class="t">Baixar no Google Play</span><span class="d">Android</span></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/garrafacerta/" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#BF1826" stroke-width="1.8" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4.2" />
+              <circle cx="17.4" cy="6.6" r="1" fill="#BF1826" stroke="none" />
+            </svg>
+            <span class="txt"><span class="t">Instagram</span><span class="d">@garrafacerta · dicas de vinho e adega</span></span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="notas">Grátis para baixar · Funciona offline · Português e inglês</p>
+    </main>
+
+    <footer>
+      Feito por <a href="https://www.alexfalcao.pro.br/">Alex Falcão</a> · São Paulo
+    </footer>
+
+    <script>
+      // Põe a loja do aparelho em primeiro e em destaque. Sem JS (ou no
+      // computador) a página fica como está: App Store primeiro, as duas visíveis.
+      (function () {
+        var ua = navigator.userAgent || "";
+        var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+        var android = /Android/.test(ua);
+        if (!ios && !android) return;
+        var meu = document.getElementById(ios ? "ios" : "android");
+        var outro = document.getElementById(ios ? "android" : "ios");
+        var lista = document.getElementById("links");
+        lista.insertBefore(meu, lista.firstChild);
+        meu.querySelector("a").classList.add("primario");
+        outro.querySelector("a").classList.remove("primario");
+      })();
+    </script>
+  </body>
+</html>
